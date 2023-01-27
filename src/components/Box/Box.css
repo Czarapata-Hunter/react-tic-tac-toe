@@ -1,0 +1,12 @@
+.box {
+  height: 150px;
+  width: 150px;
+  margin: 5px;
+  background-color: rgb(129, 235, 253);
+
+  border-radius: 15px;
+}
+
+button:hover {
+  scale: 1.7em;
+}

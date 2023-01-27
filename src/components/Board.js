@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGameContext } from '../context/GameContext.js';
-import Box from './Box.js';
+import Box from './Box/Box.js';
 
 export default function Board({ onClick }) {
   const { board } = useGameContext();
