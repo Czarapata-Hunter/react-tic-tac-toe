@@ -3,12 +3,17 @@ import { useGameContext } from '../context/GameContext.js';
 import Box from './Box/Box.js';
 
 export default function Board() {
-  const { board, setBoard } = useGameContext();
+  const { board, setBoard, active, setActive } = useGameContext();
 
   function handleClick(i) {
     const nextBoard = board.slice();
-    nextBoard[i] = 'X';
+    if (active) {
+      nextBoard[i] = 'X';
+    } else {
+      nextBoard[i] = 'O';
+    }
     setBoard(nextBoard);
+    setActive(!active);
   }
 
   return (
