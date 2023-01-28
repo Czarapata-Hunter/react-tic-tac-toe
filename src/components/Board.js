@@ -6,6 +6,9 @@ export default function Board() {
   const { board, setBoard, active, setActive } = useGameContext();
 
   function handleClick(i) {
+    if (board[i]) {
+      return;
+    }
     const nextBoard = board.slice();
     if (active) {
       nextBoard[i] = 'X';
