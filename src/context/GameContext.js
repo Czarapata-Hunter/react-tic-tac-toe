@@ -4,7 +4,7 @@ const GameContext = createContext();
 const GameProvider = ({ children }) => {
   const [currentPlayer, setCurrentPlayer] = useState('O');
   const [active, setActive] = useState(true);
-  const [board, setBoard] = useState(['X', 'O', '', '', 'X', 'O', '', '', '']);
+  const [board, setBoard] = useState(['', '', '', '', '', '', '', '', '']);
   const [gameMessage, setGameMessage] = useState('');
 
   return (
