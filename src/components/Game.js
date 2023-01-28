@@ -7,12 +7,12 @@ export default function Game() {
   return (
     <div>
       <div>
-        <Board boxes={board} />
-      </div>
-      <div>
-        <div>Next Player is O</div>
         <button>Start Game</button>
       </div>
+      <div>
+        <Board boxes={board} />
+      </div>
+      <div>Next Player is O</div>
     </div>
   );
 }
