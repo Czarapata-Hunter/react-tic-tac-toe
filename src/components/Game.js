@@ -12,7 +12,7 @@ export default function Game() {
       <div>
         <Board boxes={board} />
       </div>
-      <div>Next Player is O</div>
+      <div>{status}</div>
     </div>
   );
 }

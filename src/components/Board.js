@@ -3,10 +3,10 @@ import { useGameContext } from '../context/GameContext.js';
 import Box from './Box/Box.js';
 
 export default function Board() {
-  const { board, setBoard, active, setActive } = useGameContext();
+  const { board, setBoard, active, setActive, gameMessage } = useGameContext();
 
   function handleClick(i) {
-    if (board[i]) {
+    if (board[i] || declareWinner(board)) {
       return;
     }
     const nextBoard = board.slice();
