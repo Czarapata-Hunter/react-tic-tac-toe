@@ -1,16 +1,31 @@
 import React from 'react';
 import './Box.css';
-// import { useState } from 'react';
+import { useGameContext } from '../../context/GameContext.js';
 
-export default function Box({ value, onBoxClick }) {
-  // const [value, setValue] = useState(null);
+export default function Box({ box }) {
+  const { board, setBoard, active, currentPlayer, setCurrentPlayer, setGameMessage } =
+    useGameContext();
 
-  // function handleClick() {
-  //   setValue('X');
-  // }
+  const boxClickHandler = () => {
+    if (box.content !== '') return;
+    if (!active) return;
+
+    box.content = currentPlayer;
+    const newBoard = [...board];
+    setBoard(newBoard);
+
+    if (currentPlayer === 'X') {
+      setCurrentPlayer('O');
+      setGameMessage('Your move O');
+    } else {
+      setCurrentPlayer('X');
+      setGameMessage('Your move X');
+    }
+  };
+
   return (
-    <button className="box" onClick={onBoxClick}>
-      {value}
-    </button>
+    <div className="box" onClick={boxClickHandler}>
+      {box.content}
+    </div>
   );
 }
